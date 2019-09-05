@@ -1,5 +1,5 @@
-import styled from 'styled-components'
-import { Link } from "gatsby"
+import styled from 'styled-components';
+import { Link } from "gatsby";
 
 export const PostItemLink = styled(Link)`
   color: #8899a6;
@@ -21,7 +21,7 @@ export const PostItemWrapper = styled.section`
 
 export const PostItemTag = styled.div`
   align-items: center;
-  background: black;
+  background: ${props => (props.background ? props.background : "#1fa1f2")};
   border-radius: 50%;
   color: #fff;
   display: flex;
@@ -39,7 +39,7 @@ export const PostItemInfo = styled.div`
   margin-left: 1.5rem;
 `;
 
-export const PostItemDate = styled.date`
+export const PostItemDate = styled.time`
   font-size: .9rem;
 `;
 
