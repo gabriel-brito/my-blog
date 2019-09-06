@@ -9,7 +9,7 @@ const Avatar = () => {
         avatarImage: file(relativePath: { eq: "gatsby-profile.jpg" }) {
           childImageSharp {
             fluid(maxWidth: 60) {
-              ...GatsbyImageSharpFluid_tracedSVG
+              ...GatsbyImageSharpFluid
             }
           }
         }
