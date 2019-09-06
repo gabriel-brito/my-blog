@@ -3,7 +3,7 @@ date: 2015-01-04 05:54:23
 title: Lorem Lorem Ipsum
 description: Foda-se mermão
 category: JS
-background: "#7AAB13"
+background: "red"
 ---
 
 # Lorem ipsum
