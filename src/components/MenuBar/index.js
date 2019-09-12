@@ -39,7 +39,9 @@ const MenuBar = () => {
         <S.MenuBarItem title="grid change" 
           onClick={() => {
             window.__setPreferredTheme(isDarkMode ? 'light' : 'dark');
-          }}>
+          }}
+          className={theme}
+        >
           <Light />
         </S.MenuBarItem>
         <S.MenuBarItem title="back to top">
