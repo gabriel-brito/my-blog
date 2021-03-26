@@ -1,11 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import * as S from './styled';
 
-import { Home } from "styled-icons/boxicons-solid/Home"
-import { SearchAlt2 as Search } from "styled-icons/boxicons-regular/SearchAlt2"
-import { UpArrowAlt as Arrow } from "styled-icons/boxicons-regular/UpArrowAlt"
-import { Lightbulb as Light } from "styled-icons/typicons/Lightbulb"
-import { Grid } from "styled-icons/boxicons-solid/Grid"
+import { Home } from 'styled-icons/boxicons-solid/Home'
+import { SearchAlt2 as Search } from 'styled-icons/boxicons-regular/SearchAlt2'
+import { Lightbulb as Light } from 'styled-icons/typicons/Lightbulb'
+import { Person } from '@styled-icons/evaicons-solid/Person'
 
 const MenuBar = () => {
   const [ theme, setTheme ] = useState(null);
@@ -33,19 +32,18 @@ const MenuBar = () => {
       </S.MenuBarGroup>
       
       <S.MenuBarGroup>
-        <S.MenuBarItem title="change theme">
-          <Arrow />
-        </S.MenuBarItem>
-        <S.MenuBarItem title="grid change" 
+        <S.MenuBarLink to='/about' title='About me page'>
+          <S.MenuBarItem>
+            <Person />
+          </S.MenuBarItem>
+        </S.MenuBarLink>
+        <S.MenuBarItem title='grid change' 
           onClick={() => {
             window.__setPreferredTheme(isDarkMode ? 'light' : 'dark');
           }}
           className={theme}
         >
           <Light />
-        </S.MenuBarItem>
-        <S.MenuBarItem title="back to top">
-          <Grid />
         </S.MenuBarItem>
       </S.MenuBarGroup>
     </S.MenuBarWrapper>

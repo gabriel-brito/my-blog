@@ -1,5 +1,6 @@
-import styled from "styled-components"
-import { Link } from "gatsby"
+import styled from 'styled-components'
+import media from 'styled-media-query'
+import { Link } from 'gatsby'
 
 export const MenuBarWrapper = styled.aside`
   align-items: center;
@@ -12,17 +13,39 @@ export const MenuBarWrapper = styled.aside`
   padding: 0.8rem 0;
   position: fixed;
   right: 0;
+  transition: background 0.5s;
   width: 3.75rem;
+
+  ${media.lessThan('large')`
+    border-top: 1px solid var(--borders);
+    background-color: var(--background);
+    bottom: 0;
+    flex-direction: row;
+    height: auto;
+    padding: 0;
+    position: fixed;
+    width: 100%;
+    z-index: 1;
+  `}
 `
 
 export const MenuBarGroup = styled.div`
   display: flex;
   flex-direction: column;
+  ${media.lessThan('large')`
+    flex-direction: row;
+  `}
 `
 
 export const MenuBarLink = styled(Link)`
   display: block;
+  &.active {
+    span {
+      color: var(--highlight);
+    }
+  }
 `
+
 export const MenuBarItem = styled.span`
   color: var(--texts);
   cursor: pointer;
@@ -31,16 +54,34 @@ export const MenuBarItem = styled.span`
   padding: 1.1rem;
   position: relative;
   width: 3.75rem;
-  
-  &:hover {
-    color: var(--highlight);
-  }
 
   &.light {
     color: #d4d400;
-
     &:hover {
       color: #e2e240;
     }
   }
+
+  &:hover {
+    color: var(--highlight);
+  }
+
+  &.display {
+    ${media.lessThan('large')`
+      display: none;
+    `}
+  }
+
+  ${media.greaterThan('large')`
+    &:hover {
+      color: var(--highlight);
+    }
+  `}
+
+  ${media.lessThan('large')`
+    height: 3.2rem;
+    padding: .9rem;
+    position: relative;
+    width: 3.2rem;
+  `}
 `

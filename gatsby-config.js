@@ -4,11 +4,11 @@ const queries = require('./src/utils/algolia_queries');
 module.exports = {
   siteMetadata: {
     title: `My Blog`,
-    description: `A blog about Front-End Development`,
-    author: `@myblog`,
+    description: `A blog about Software Development`,
+    author: `@gabriel-brito`,
     devName: `Gabriel Santos`,
-    devDescription: `Faça elevar o cosmo do seu coração, todo mal combater, despertar o poder!`,
-    position: `Tentando virar pato`
+    devDescription: `Front-End Developer with +4 years of experience, writer, passionate by technology and a learner.`,
+    position: `Front-end developer`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -40,17 +40,17 @@ module.exports = {
       options: {
         plugins: [
           {
-            resolve: "gatsby-remark-relative-images",
+            resolve: 'gatsby-remark-relative-images',
             options: {
-              name: "uploads"
-            }
+              name: 'uploads',
+            },
           },
           {
-            resolve: "gatsby-remark-images",
+            resolve: 'gatsby-remark-images',
             options: {
               maxWidth: 960,
-              linkImagesToOriginal: false
-            }
+              linkImagesToOriginal: false,
+            },
           },
           `gatsby-remark-lazy-load`,
         ],
@@ -85,4 +85,4 @@ module.exports = {
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
   ],
-}
+};
